@@ -9,11 +9,11 @@ from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
+from aiogram.types import CallbackQuery
 from aiogram.types import (
     Message, ReplyKeyboardMarkup, KeyboardButton,
     ReplyKeyboardRemove, InlineKeyboardMarkup, InlineKeyboardButton
 )
-from aiogram.types import CallbackQuery
 from dotenv import load_dotenv
 
 load_dotenv()
