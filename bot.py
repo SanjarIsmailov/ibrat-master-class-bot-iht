@@ -224,6 +224,6 @@ if __name__ == "__main__":
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
-        handlers=[logging.FileHandler("bot2.log"), logging.StreamHandler(sys.stdout)]
+        handlers=[logging.FileHandler("bot.log"), logging.StreamHandler(sys.stdout)]
     )
     asyncio.run(main())
