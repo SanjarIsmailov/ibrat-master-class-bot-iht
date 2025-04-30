@@ -55,9 +55,7 @@ async def command_start_handler(message: Message, state: FSMContext) -> None:
         return
 
     keyboard = ReplyKeyboardMarkup(
-        keyboard=[
-            [KeyboardButton(text="🇺🇿 Uzbek"), KeyboardButton(text="🇬🇧 English")]
-        ],
+        keyboard=[[KeyboardButton(text="🇺🇿 Uzbek"), KeyboardButton(text="🇬🇧 English")]],
         resize_keyboard=True,
         one_time_keyboard=True
     )
@@ -132,9 +130,7 @@ async def process_age(message: Message, state: FSMContext):
     await state.update_data(age=message.text)
 
     keyboard = ReplyKeyboardMarkup(
-        keyboard=[
-            [KeyboardButton(text="Event A"), KeyboardButton(text="Event B"), KeyboardButton(text="Event C")]
-        ],
+        keyboard=[[KeyboardButton(text="18.05.2025")]],
         resize_keyboard=True,
         one_time_keyboard=True
     )
@@ -154,10 +150,10 @@ async def process_event(message: Message, state: FSMContext, bot: Bot):
     lang = data['language']
     user_id = message.from_user.id
 
-    if message.text not in ["Event A", "Event B", "Event C"]:
+    if message.text != "18.05.2025":
         text = {
-            "uz": "Iltimos tugmalardan birini tanlang!",
-            "en": "Please choose a valid event from the buttons!"
+            "uz": "Iltimos tugmani tanlang!",
+            "en": "Please choose the valid event button!"
         }
         await message.answer(text[lang])
         return
